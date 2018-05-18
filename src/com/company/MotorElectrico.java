@@ -12,4 +12,6 @@ public interface MotorElectrico {
 
     public void desconectar();
 
+    public boolean haveBatery();
+
 }
