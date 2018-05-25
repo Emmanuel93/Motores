@@ -1,21 +1,21 @@
 package com.company;
 
-public class MotorHibridoFacade implements Motor {
+public class MotorHibridoFacade extends MotorComun {
 
     private Motor motorComun;
 
-    private MotorElectrico motorElectrico;
+    private MotorEcologico motorEcologico;
 
     private MotorAdapter motorAdapter;
 
-    public MotorHibridoFacade(Motor motorComun, MotorElectrico motorElectrico){
+    public MotorHibridoFacade(Motor motorComun, MotorEcologico motorEcologico){
         this.motorComun = motorComun;
-        this.motorElectrico = motorElectrico;
-        this.motorAdapter = new MotorAdapter(motorElectrico);
+        this.motorEcologico = motorEcologico;
+        this.motorAdapter = new MotorAdapter(motorEcologico);
     }
 
     public void encender() {
-        if (motorElectrico.haveBatery()){
+        if (motorEcologico.haveBatery()){
             this.motorAdapter.encender();
         }else{
             this.motorComun.encender();
@@ -25,16 +25,16 @@ public class MotorHibridoFacade implements Motor {
 
     @Override
     public void acelerar() {
-        if (motorElectrico.haveBatery()){
+        if (motorEcologico.haveBatery())
             this.motorAdapter.acelerar();
-        }else{
+        else
             this.motorComun.acelerar();
-        }
+
     }
 
     @Override
     public void apagar() {
-        if (motorElectrico.haveBatery()){
+        if (motorEcologico.haveBatery()){
             this.motorAdapter.apagar();
         }else{
             this.motorComun.apagar();

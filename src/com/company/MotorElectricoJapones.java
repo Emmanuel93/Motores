@@ -1,36 +1,37 @@
 package com.company;
 
-public class MotorElectricoJapones implements MotorElectrico {
-
-    public boolean batery;
-
+public class MotorElectricoJapones extends MotorElectrico {
     @Override
-    public void Conectar() {
-        System.out.println("Estas conectando un motor electrico");
+    public void conectar() {
+        System.out.println("Se esta conectando un motor electrico japones");
     }
 
     @Override
-    public void Activar() {
-        System.out.println("Estas activando un motor electrico");
+    public void activar() {
+        System.out.println("Se esta activando un motor electrico japones");
     }
 
     @Override
     public void moverMasRapido() {
-        System.out.println("Estas llendo mas rapido con un motor comun");
+        System.out.println("Se esta moviendo mas rapido un motor electrico japones");
     }
 
     @Override
     public void detener() {
-        System.out.println("Estas deteniendo un motor electrico");
+        System.out.println("Se esta deteniendo un motor electrico japones");
     }
 
     @Override
     public void desconectar() {
-        System.out.println("Estas desconectando un motor electrico");
+        System.out.println("Se esta desconectando un motor electrico japones");
     }
 
     @Override
-    public boolean haveBatery() {
-        return this.batery;
+    public void recorrido() {
+        conectar();
+        activar();
+        moverMasRapido();
+        detener();
+        desconectar();
     }
 }

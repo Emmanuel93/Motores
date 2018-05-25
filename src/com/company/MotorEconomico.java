@@ -1,18 +1,20 @@
 package com.company;
 
-public class MotorEconomico implements Motor{
+public class MotorEconomico extends MotorComun{
+
+
     @Override
     public void encender() {
-        System.out.println("Estas encendiendo un motor economico");
+        System.out.println("Se esta encendiendo un motor Economico");
     }
 
     @Override
     public void acelerar() {
-        System.out.println("Estas acelerando un motor economico");
+        System.out.println("Se esta acelerando un motor Economico");
     }
 
     @Override
     public void apagar() {
-        System.out.println("Estas apagando un motor economico");
+        System.out.println("Se esta apagando un motor Economico");
     }
 }

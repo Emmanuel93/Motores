@@ -6,5 +6,7 @@ public interface Motor {
 
     public void acelerar();
 
+    public void recorrido();
+
     public void apagar();
 }

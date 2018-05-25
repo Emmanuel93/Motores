@@ -1,27 +1,27 @@
 package com.company;
 
-public class MotorAdapter implements Motor{
+public class MotorAdapter extends MotorComun{
 
-    private MotorElectrico motorElectrico;
+    private MotorEcologico motorEcologico;
 
-    public MotorAdapter(MotorElectrico motorElectrico){
-        this.motorElectrico = motorElectrico;
+    public MotorAdapter(MotorEcologico motorEcologico){
+        this.motorEcologico = motorEcologico;
     }
 
     @Override
     public void encender() {
-        this.motorElectrico.Conectar();
-        this.motorElectrico.Activar();
+        this.motorEcologico.conectar();
+        this.motorEcologico.activar();
     }
 
     @Override
     public void acelerar() {
-        this.motorElectrico.moverMasRapido();
+        this.motorEcologico.moverMasRapido();
     }
 
     @Override
     public void apagar() {
-        this.motorElectrico.detener();
-        this.motorElectrico.desconectar();
+        this.motorEcologico.detener();
+        this.motorEcologico.desconectar();
     }
 }

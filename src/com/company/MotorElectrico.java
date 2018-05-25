@@ -1,17 +1,34 @@
 package com.company;
 
-public interface MotorElectrico {
+public abstract class MotorElectrico implements MotorEcologico {
 
-    public void Conectar();
+    public boolean batery;
 
-    public void Activar();
+    @Override
+    public abstract void conectar();
 
-    public void moverMasRapido();
+    @Override
+    public abstract void activar();
 
-    public void detener();
+    @Override
+    public abstract void moverMasRapido();
 
-    public void desconectar();
+    @Override
+    public abstract void detener();
 
-    public boolean haveBatery();
+    @Override
+    public abstract void desconectar();
 
+    @Override
+    public boolean haveBatery() {
+        return this.batery;
+    }
+
+    public void recorrido(){
+        activar();
+        conectar();
+        moverMasRapido();
+        detener();
+        desconectar();
+    }
 }
